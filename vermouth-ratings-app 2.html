@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vermouth Ratings</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Vermouth">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#7A1F2B">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF0E6; --surface:#FAFBF6; --ink:#1F2A22; --muted:#5E6B5F;
+  --line:#CDD3C3; --rosso:#7A1F2B; --rosso-soft:#F1E1E2; --gold:#9A6E1C;
+  --silver:#6A7076; --bronze:#8A5328; --fault:#A33A2A; --faint:.2;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15181A; --surface:#1E2326; --ink:#E8EAE0; --muted:#A3AD9F;
+    --line:#343C3F; --rosso:#D97A84; --rosso-soft:#3A2427; --gold:#D9AE5A;
+    --silver:#B9C0C6; --bronze:#C98B5A; --fault:#E0806F; --faint:.28;
+    color-scheme: dark;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Work Sans",system-ui,sans-serif;font-size:16px;line-height:1.5}
+main{max-width:640px;margin:0 auto;padding:24px 18px 80px}
+h1{font-family:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;font-weight:700;font-size:2.4rem;line-height:1.05;margin:0 0 4px;color:var(--rosso)}
+h2{font-family:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;font-size:1.4rem;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 20px}
+.tabs{display:flex;gap:8px;margin-bottom:20px}
+.tabs button{flex:1;padding:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:500;border-radius:8px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--rosso);color:var(--surface);border-color:var(--rosso)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--rosso);outline-offset:2px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:16px}
+label.f{display:block;font-size:.9rem;color:var(--muted);margin-bottom:4px}
+input[type=text],input[type=date],select,textarea{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit}
+textarea{min-height:70px;resize:vertical}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row{margin-bottom:12px}
+.factor{padding:14px 0;border-top:1px solid var(--line)}
+.factor:first-of-type{border-top:none;padding-top:0}
+.fhead{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.fname{font-weight:600}
+.fval{font-family:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--rosso);white-space:nowrap}
+.fval small{font-size:.8rem;color:var(--muted);font-family:"Work Sans",sans-serif;font-weight:400}
+.hint{font-size:.85rem;color:var(--muted);margin:2px 0 8px}
+input[type=range]{width:100%;accent-color:var(--rosso)}
+.fnote{margin-top:6px;font-size:.9rem;padding:7px 9px}
+.faults,.tags{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:6px 11px;border-radius:999px;font:inherit;font-size:.88rem;cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--fault);color:var(--fault);background:var(--rosso-soft)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;padding:4px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.tag i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.total{position:sticky;bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border:2px solid var(--rosso);border-radius:12px;padding:12px 16px;margin-top:8px;z-index:2}
+.big{font-family:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;font-weight:700;font-size:3rem;line-height:1;color:var(--rosso)}
+.medal{font-weight:600}
+.medal.gold{color:var(--gold)}.medal.silver{color:var(--silver)}.medal.bronze{color:var(--bronze)}.medal.none{color:var(--muted)}
+.btn{background:var(--rosso);color:var(--surface);border:none;border-radius:8px;padding:11px 18px;font:inherit;font-weight:600;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--rosso);border:1px solid var(--rosso)}
+.btn.danger{background:transparent;color:var(--fault);border:1px solid var(--fault)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.status{font-size:.9rem;color:var(--muted);min-height:1.4em;margin-top:8px}
+
+/* Wheel */
+.wheelpanel{border:2px solid var(--rosso)}
+.wheelpanel .wscore{font-family:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;font-weight:700;color:var(--rosso)}
+.wheel{display:block;width:100%;max-width:520px;margin:8px auto 4px;touch-action:manipulation}
+.wheel .seg{cursor:pointer;transition:fill-opacity .15s}
+.wheel .seg:focus{outline:none}
+.wheel .seg:focus-visible{stroke:var(--ink);stroke-width:2}
+.wheel .outer{fill-opacity:var(--faint)}
+.wheel .outer.on{fill-opacity:1}
+.wheel .lbl{font-family:"Work Sans",sans-serif;font-size:9.5px;fill:var(--ink);pointer-events:none}
+.wheel .lbl.on{fill:#fff;font-weight:600}
+.wheel .cat{font-family:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;font-weight:700;font-size:12px;fill:#fff;pointer-events:none}
+.wheel .hub{fill:var(--surface)}
+.wheel .hubtxt{font-family:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;font-weight:700;fill:var(--rosso);text-anchor:middle}
+.wheel.readonly .seg{cursor:default}
+
+.listctl{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px}
+.listctl select{width:auto}
+.entry{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
+.entry>button{all:unset;display:flex;width:100%;box-sizing:border-box;padding:14px 16px;gap:14px;align-items:center;cursor:pointer}
+.entry>button:focus-visible{outline:2px solid var(--rosso);outline-offset:-2px;border-radius:10px}
+.escore{font-family:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;font-weight:700;font-size:1.9rem;color:var(--rosso);min-width:52px;text-align:center}
+.einfo{flex:1;min-width:0}
+.ename{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
+.emeta{font-size:.85rem;color:var(--muted)}
+.edetail{padding:0 16px 16px;border-top:1px solid var(--line)}
+.edetail table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.92rem}
+.edetail td{padding:5px 0;vertical-align:top;border-bottom:1px dotted var(--line)}
+.edetail td.n{text-align:right;white-space:nowrap;padding-left:10px;font-weight:600}
+.edetail td .c{display:block;color:var(--muted);font-size:.85rem}
+.empty{text-align:center;color:var(--muted);padding:30px 10px}
+.scale table{width:100%;border-collapse:collapse;font-size:.92rem}
+.scale td,.scale th{text-align:left;padding:7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.scale td .c{display:block;color:var(--muted);font-size:.85rem}
+.scale th{color:var(--muted);font-weight:500}
+.scale td.n{text-align:right;font-weight:600;white-space:nowrap;padding-left:10px}
+.banner{background:var(--rosso-soft);border:1px solid var(--fault);color:var(--ink);border-radius:8px;padding:12px 14px;margin-bottom:16px;font-size:.92rem}
+.loading{color:var(--muted);padding:20px 0}
+</style>
+</head>
+<body>
+<main>
+  <h1>Vermouth Ratings</h1>
+  <p class="sub">A 100-point scale for tasting vermouth, with a flavour wheel for each one you rate.</p>
+
+  <div class="banner" id="banner" role="status" hidden></div>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="rate">Rate</button>
+    <button role="tab" aria-selected="false" data-tab="saved">Saved</button>
+    <button role="tab" aria-selected="false" data-tab="scale">The scale</button>
+  </div>
+
+  <section id="tab-rate">
+    <div class="panel wheelpanel" id="wheelPanel" hidden>
+      <h2 id="wheelTitle">Flavour wheel</h2>
+      <p class="hint">Tap every aroma and flavour you picked up. Tap again to remove it.</p>
+      <div id="wheelMount"></div>
+      <div class="tags" id="wheelTags"></div>
+      <div class="actions">
+        <button class="btn" id="wheelSave">Save flavours</button>
+        <button class="btn ghost" id="wheelSkip">Skip for now</button>
+      </div>
+    </div>
+
+    <div id="rateForm">
+      <div class="panel">
+        <div class="row"><label class="f" for="name">Vermouth</label><input type="text" id="name" placeholder="e.g. Cocchi Storico Vermouth di Torino"></div>
+        <div class="grid2 row">
+          <div><label class="f" for="style">Style</label>
+            <select id="style"><option>Rosso</option><option>Bianco</option><option>Extra dry</option><option>Dry</option><option>Rosé</option><option>Ambrato</option><option>Other</option></select></div>
+          <div><label class="f" for="served">Tasted</label>
+            <select id="served"><option>Neat, chilled</option><option>Over ice</option><option>With tonic or soda</option><option>In a cocktail</option></select></div>
+        </div>
+        <div><label class="f" for="date">Date</label><input type="date" id="date"></div>
+      </div>
+
+      <div class="panel" id="factors"></div>
+
+      <div class="panel">
+        <h2>Faults</h2>
+        <p class="hint">Each fault you mark takes 2 points off the total.</p>
+        <div class="faults" id="faults"></div>
+      </div>
+
+      <div class="panel">
+        <label class="f" for="notes">Overall notes</label>
+        <textarea id="notes" placeholder="Impressions, what you'd pair it with, would you buy it again?"></textarea>
+      </div>
+
+      <div class="total" aria-live="polite">
+        <div class="big" id="total">0</div>
+        <div style="text-align:right">
+          <div class="medal none" id="medal">No medal</div>
+          <div class="actions" style="margin-top:6px;justify-content:flex-end">
+            <button class="btn ghost" id="clear">Clear</button>
+            <button class="btn" id="save">Save rating</button>
+          </div>
+        </div>
+      </div>
+      <div class="status" id="status"></div>
+    </div>
+  </section>
+
+  <section id="tab-saved" hidden>
+    <div class="listctl">
+      <span id="count" class="emeta"></span>
+      <select id="sort" aria-label="Sort saved ratings">
+        <option value="score">Highest score</option>
+        <option value="date">Most recent</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+    <div id="list"><div class="loading">Loading your ratings…</div></div>
+    <div class="panel" style="margin-top:20px">
+      <h2>Backup</h2>
+      <p class="hint">Your ratings live on this phone only. Copy a backup now and then and keep it in Notes or an email to yourself. Paste it back here to restore.</p>
+      <div class="actions" style="margin-top:6px">
+        <button class="btn ghost" id="copyBackup">Copy backup</button>
+        <button class="btn ghost" id="showRestore">Restore from backup</button>
+      </div>
+      <div id="restoreBox" hidden style="margin-top:12px">
+        <label class="f" for="restoreText">Paste your backup</label>
+        <textarea id="restoreText"></textarea>
+        <div class="actions"><button class="btn" id="doRestore">Restore ratings</button></div>
+      </div>
+      <div class="status" id="backupStatus"></div>
+    </div>
+  </section>
+
+  <section id="tab-scale" hidden>
+    <div class="panel scale">
+      <h2>How points are split</h2>
+      <table id="scaleTable"><tr><th>Factor</th><th style="text-align:right">Max</th></tr></table>
+    </div>
+    <div class="panel scale">
+      <h2>Medal bands</h2>
+      <table>
+        <tr><td>Gold</td><td class="n">90–100</td></tr>
+        <tr><td>Silver</td><td class="n">85–89</td></tr>
+        <tr><td>Bronze</td><td class="n">80–84</td></tr>
+        <tr><td>Commended</td><td class="n">70–79</td></tr>
+        <tr><td>No medal</td><td class="n">Under 70</td></tr>
+      </table>
+    </div>
+    <div class="panel scale">
+      <h2>The flavour wheel</h2>
+      <p class="hint">Eight families of aroma and flavour common in vermouth. The inner ring names the family; the outer ring holds the specific notes you can tag.</p>
+      <div id="refWheel"></div>
+    </div>
+    <div class="panel scale">
+      <h2>Key vermouth botanicals</h2>
+      <p class="hint">The herbs, roots and seeds you're most likely to meet. Wormwood is the defining one: in the EU a drink can only be called vermouth if its flavour comes from wormwood (Artemisia).</p>
+      <table>
+        <tr><td><strong>Wormwood</strong><span class="c">Bitter, resinous and sage-like. The backbone of every vermouth, and where the name comes from (German <em>Wermut</em>).</span></td></tr>
+        <tr><td><strong>Gentian</strong><span class="c">Deep, earthy, lingering bitterness. Drives the finish, especially in rossos.</span></td></tr>
+        <tr><td><strong>Cinchona</strong><span class="c">Quinine bark. A clean, dry, tonic-water bitterness.</span></td></tr>
+        <tr><td><strong>Angelica</strong><span class="c">Musky, earthy and celery-like. Adds depth and helps tie other botanicals together.</span></td></tr>
+        <tr><td><strong>Orris root</strong><span class="c">Powdery, violet-like perfume. Softens edges and lengthens aroma.</span></td></tr>
+        <tr><td><strong>Calamus</strong><span class="c">Bitter with warm ginger and cinnamon tones.</span></td></tr>
+        <tr><td><strong>Rhubarb root</strong><span class="c">Earthy, slightly smoky, tart bitterness.</span></td></tr>
+        <tr><td><strong>Sage</strong><span class="c">Savoury and slightly camphor-like. Very common in dry and bianco styles.</span></td></tr>
+        <tr><td><strong>Thyme and marjoram</strong><span class="c">Warm Mediterranean herb notes, savoury rather than sweet.</span></td></tr>
+        <tr><td><strong>Hyssop</strong><span class="c">Minty, medicinal and faintly floral.</span></td></tr>
+        <tr><td><strong>Yarrow and centaury</strong><span class="c">Traditional bittering herbs, grassy and drying.</span></td></tr>
+        <tr><td><strong>Chamomile and elderflower</strong><span class="c">Honeyed apple and soft floral notes, typical of bianco and Chambéry styles.</span></td></tr>
+        <tr><td><strong>Coriander seed</strong><span class="c">Citrusy and lightly spicy. Bridges the herbs and the orange peel.</span></td></tr>
+        <tr><td><strong>Cardamom, clove, cinnamon, nutmeg</strong><span class="c">Warm baking spice, strongest in rosso.</span></td></tr>
+        <tr><td><strong>Saffron</strong><span class="c">Honeyed, hay-like and slightly metallic. Gives some vermouths their golden colour.</span></td></tr>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script>
+const FACTORS = [
+  {id:"appearance", name:"Appearance", max:5, hint:"Clarity and colour true to style. 5 bright and correct, 3 slightly dull, 1 hazy or off-colour."},
+  {id:"nose", name:"Nose", max:25, hint:"Botanical intensity, complexity and how well herbs, citrus, spice and wine knit together. 22+ layered and seamless, 15 pleasant but simple, under 10 muted or artificial."},
+  {id:"palate", name:"Palate balance", max:25, hint:"Sweetness, bitterness, acidity and alcohol in harmony. 22+ every element in check, 15 one element leads, under 10 cloying, flabby or hot."},
+  {id:"texture", name:"Texture & body", max:10, hint:"Weight and mouthfeel suited to the style. 9+ supple and complete, 5 adequate, under 4 thin or syrupy."},
+  {id:"finish", name:"Finish", max:15, hint:"Length and quality of the bitter close. 13+ long and clean, 8 moderate, under 5 short or harshly astringent."},
+  {id:"typicity", name:"Typicity", max:10, hint:"How well it expresses its category (rosso, extra dry, Torino, Chambéry…). 9+ textbook or brilliantly its own, 5 generic."},
+  {id:"mix", name:"Mixability", max:10, hint:"How it performs with ice, tonic or in a Martini or Negroni. 9+ lifts the drink, 5 fine, under 4 gets lost or clashes."}
+];
+const FAULTS = ["Oxidised","Artificial flavour","Caramel-dominated","Harsh bitterness","Cloying","Hot alcohol","Flat or dull"];
+const FAULT_PTS = 2;
+const KEY = "vermouth-ratings";
+
+const WHEEL = [
+  {cat:"Citrus",  color:"#C98A12", notes:["Orange peel","Bitter orange","Lemon zest","Grapefruit","Bergamot"]},
+  {cat:"Fruit",   color:"#B4432E", notes:["Cherry","Red berries","Dried fig","Raisin","Pear"]},
+  {cat:"Floral",  color:"#A44A7E", notes:["Chamomile","Rose","Elderflower","Violet","Orris root"]},
+  {cat:"Herbal",  color:"#4E7D3A", notes:["Wormwood","Sage","Thyme","Marjoram","Rosemary","Hyssop","Yarrow","Lemon balm","Mint","Bay leaf"]},
+  {cat:"Bitter",  color:"#2F6B66", notes:["Gentian","Cinchona","Angelica","Rhubarb root","Calamus","Quassia","Centaury"]},
+  {cat:"Spice",   color:"#8C4F22", notes:["Cinnamon","Clove","Nutmeg","Cardamom","Coriander seed","Ginger","Saffron","Star anise","Juniper"]},
+  {cat:"Sweet",   color:"#7A5A2E", notes:["Vanilla","Caramel","Honey","Cocoa","Licorice"]},
+  {cat:"Wine",    color:"#6B2A47", notes:["Fresh grape","Nutty","Sherry-like","Oak"]}
+];
+const NOTE_COLOR = {};
+WHEEL.forEach(c=>c.notes.forEach(n=>NOTE_COLOR[n]=c.color));
+
+let ratings = [];
+let editingId = null;
+let wheelForId = null;
+let wheelSel = new Set();
+const state = {scores:{}, notes:{}, faults:new Set()};
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function medalFor(t){
+  if(t>=90) return ["Gold","gold"];
+  if(t>=85) return ["Silver","silver"];
+  if(t>=80) return ["Bronze","bronze"];
+  if(t>=70) return ["Commended","none"];
+  return ["No medal","none"];
+}
+function computeTotal(scores, faults){
+  const sum = FACTORS.reduce((a,f)=>a+(Number(scores[f.id])||0),0);
+  return Math.max(0, sum - faults.length*FAULT_PTS);
+}
+
+/* ---------- Wheel drawing ---------- */
+const pt = (r,a)=>{const t=a*Math.PI/180; return [(r*Math.sin(t)).toFixed(2), (-r*Math.cos(t)).toFixed(2)];};
+function arcPath(r0,r1,a0,a1){
+  const large = (a1-a0)>180?1:0;
+  const [x1,y1]=pt(r1,a0),[x2,y2]=pt(r1,a1),[x3,y3]=pt(r0,a1),[x4,y4]=pt(r0,a0);
+  return `M${x1},${y1}A${r1},${r1} 0 ${large} 1 ${x2},${y2}L${x3},${y3}A${r0},${r0} 0 ${large} 0 ${x4},${y4}Z`;
+}
+function wheelSVG(selected, opts={}){
+  const total = WHEEL.reduce((a,c)=>a+c.notes.length,0);
+  const step = 360/total;
+  const R0=46, R1=104, R2=208;
+  let a=0, segs="", labels="";
+  WHEEL.forEach(c=>{
+    const start=a, end=a+c.notes.length*step, mid=(start+end)/2;
+    segs += `<path d="${arcPath(R0,R1,start,end)}" fill="${c.color}" stroke="var(--surface)" stroke-width="1.5"/>`;
+    const [cx,cy]=pt((R0+R1)/2+2,mid);
+    const rot = (mid>90&&mid<270)? mid+180 : mid;
+    labels += `<text class="cat" x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="middle" transform="rotate(${rot} ${cx} ${cy})">${c.cat}</text>`;
+    c.notes.forEach(n=>{
+      const s=a, e=a+step, m=(s+e)/2, on=selected.has(n);
+      const tab = opts.readonly? "" : ` tabindex="0" role="button" aria-pressed="${on}" aria-label="${n}"`;
+      segs += `<path class="seg outer${on?" on":""}" data-note="${n}" d="${arcPath(R1,R2,s,e)}" fill="${c.color}" stroke="var(--surface)" stroke-width="1.5"${tab}/>`;
+      const right = m<=180;
+      const [lx,ly]=pt(right? R1+8 : R2-8, m);
+      const lrot = right? m-90 : m+90;
+      labels += `<text class="lbl${on?" on":""}" x="${lx}" y="${ly}" dominant-baseline="middle" text-anchor="start" transform="rotate(${lrot} ${lx} ${ly})">${n}</text>`;
+      a=e;
+    });
+  });
+  const hub = `<circle class="hub" r="${R0-2}"/><text class="hubtxt" y="-2" font-size="${opts.center?22:13}">${esc(opts.center ?? "Vermouth")}</text>${opts.centerSub?`<text class="hubtxt" y="16" font-size="9" style="font-family:'Work Sans';font-weight:500">${esc(opts.centerSub)}</text>`:""}`;
+  return `<svg class="wheel${opts.readonly?" readonly":""}" viewBox="-214 -214 428 428" role="img" aria-label="Vermouth flavour wheel">${segs}${labels}${hub}</svg>`;
+}
+function tagsHTML(list){
+  return list.map(n=>`<span class="tag"><i style="background:${NOTE_COLOR[n]||"#888"}"></i>${esc(n)}</span>`).join("");
+}
+
+/* ---------- Interactive wheel after rating ---------- */
+function openWheel(id){
+  const r = ratings.find(x=>x.id===id); if(!r) return;
+  wheelForId=id; wheelSel=new Set(r.flavours||[]);
+  $("wheelTitle").textContent = `Flavour wheel: ${r.name}`;
+  drawWheel(r);
+  $("wheelPanel").hidden=false;
+  $("rateForm").hidden=true;
+  showTab("rate");
+  window.scrollTo({top:0});
+}
+function drawWheel(r){
+  $("wheelMount").innerHTML = wheelSVG(wheelSel,{center:String(r.total), centerSub:medalFor(r.total)[0]});
+  $("wheelTags").innerHTML = wheelSel.size? tagsHTML(orderNotes([...wheelSel])) : `<span class="hint">No flavours tagged yet.</span>`;
+  $("wheelMount").querySelectorAll(".seg").forEach(p=>{
+    const toggle=()=>{const n=p.dataset.note; wheelSel.has(n)?wheelSel.delete(n):wheelSel.add(n); drawWheel(r); const again=$("wheelMount").querySelector(`[data-note="${CSS.escape(n)}"]`); if(again) again.focus({preventScroll:true});};
+    p.addEventListener("click",toggle);
+    p.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();}});
+  });
+}
+function orderNotes(list){
+  const order=[]; WHEEL.forEach(c=>c.notes.forEach(n=>order.push(n)));
+  return list.sort((a,b)=>order.indexOf(a)-order.indexOf(b));
+}
+function closeWheel(){
+  wheelForId=null; $("wheelPanel").hidden=true; $("rateForm").hidden=false;
+}
+$("wheelSave").addEventListener("click", async ()=>{
+  const r = ratings.find(x=>x.id===wheelForId); if(!r) return closeWheel();
+  r.flavours = orderNotes([...wheelSel]);
+  const ok = await persist();
+  const n = r.flavours.length, word = `${n} flavour${n===1?"":"s"}`;
+  $("status").textContent = ok ? `Saved ${r.name} with ${word} tagged.` : `Tagged ${word} on ${r.name} for this session only.`;
+  closeWheel(); renderList();
+});
+$("wheelSkip").addEventListener("click", closeWheel);
+
+/* ---------- Rating form ---------- */
+function buildForm(){
+  $("factors").innerHTML = FACTORS.map(f=>`
+    <div class="factor">
+      <div class="fhead"><label class="fname" for="r-${f.id}">${f.name}</label>
+        <span class="fval"><span id="v-${f.id}">0</span> <small>/ ${f.max}</small></span></div>
+      <p class="hint">${f.hint}</p>
+      <input type="range" id="r-${f.id}" min="0" max="${f.max}" step="1" value="0">
+      <input type="text" class="fnote" id="n-${f.id}" placeholder="Note on ${f.name.toLowerCase()} (optional)">
+    </div>`).join("");
+  FACTORS.forEach(f=>{
+    $("r-"+f.id).addEventListener("input", e=>{state.scores[f.id]=Number(e.target.value); $("v-"+f.id).textContent=e.target.value; updateTotal();});
+    $("n-"+f.id).addEventListener("input", e=>{state.notes[f.id]=e.target.value;});
+  });
+  $("faults").innerHTML = FAULTS.map(x=>`<button class="chip" aria-pressed="false" data-fault="${esc(x)}">${esc(x)}</button>`).join("");
+  $("faults").querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
+    const k=b.dataset.fault;
+    state.faults.has(k)?state.faults.delete(k):state.faults.add(k);
+    b.setAttribute("aria-pressed", state.faults.has(k));
+    updateTotal();
+  }));
+  $("scaleTable").innerHTML += FACTORS.map(f=>`<tr><td><strong>${f.name}</strong><span style="display:block;color:var(--muted);font-size:.85rem">${f.hint}</span></td><td class="n">${f.max}</td></tr>`).join("")
+    + `<tr><td><strong>Faults</strong><span style="display:block;color:var(--muted);font-size:.85rem">Minus ${FAULT_PTS} per fault marked</span></td><td class="n">−</td></tr><tr><td><strong>Total</strong></td><td class="n">100</td></tr>`;
+  $("refWheel").innerHTML = wheelSVG(new Set(), {readonly:true});
+}
+
+function updateTotal(){
+  const t = computeTotal(state.scores,[...state.faults]);
+  $("total").textContent = t;
+  const [m,c] = medalFor(t);
+  $("medal").textContent = m; $("medal").className = "medal "+c;
+}
+
+function resetForm(){
+  editingId=null;
+  ["name","notes"].forEach(i=>$(i).value="");
+  $("style").selectedIndex=0; $("served").selectedIndex=0;
+  $("date").value = new Date().toISOString().slice(0,10);
+  state.scores={}; state.notes={}; state.faults=new Set();
+  FACTORS.forEach(f=>{$("r-"+f.id).value=0; $("v-"+f.id).textContent=0; $("n-"+f.id).value="";});
+  $("faults").querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed","false"));
+  $("save").textContent="Save rating";
+  updateTotal();
+}
+
+function loadIntoForm(r){
+  closeWheel();
+  editingId=r.id;
+  $("name").value=r.name; $("style").value=r.style; $("served").value=r.served; $("date").value=r.date; $("notes").value=r.notes||"";
+  state.scores={...r.scores}; state.notes={...(r.factorNotes||{})}; state.faults=new Set(r.faults||[]);
+  FACTORS.forEach(f=>{const v=r.scores[f.id]||0; $("r-"+f.id).value=v; $("v-"+f.id).textContent=v; $("n-"+f.id).value=state.notes[f.id]||"";});
+  $("faults").querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed", state.faults.has(b.dataset.fault)));
+  $("save").textContent="Save changes";
+  updateTotal();
+  showTab("rate");
+  window.scrollTo({top:0});
+}
+
+let storageOK = true;
+let lastStorageError = "";
+function persist(){
+  try{ localStorage.setItem(KEY, JSON.stringify(ratings)); storageOK=true; }
+  catch(e){ storageOK=false; lastStorageError = (e && e.name==="QuotaExceededError") ? "your phone's storage for this page is full" : "this browser is blocking storage, often because of private browsing"; }
+  showBanner(); return storageOK;
+}
+function loadRatings(){
+  try{ const raw = localStorage.getItem(KEY); ratings = raw ? JSON.parse(raw) : []; }
+  catch(e){ ratings=[]; storageOK=false; lastStorageError="this browser is blocking storage, often because of private browsing"; }
+  showBanner(); renderList();
+}
+function showBanner(){
+  const b=$("banner");
+  if(storageOK){ b.hidden=true; return; }
+  b.hidden=false;
+  b.textContent = `Ratings can't be stored right now (${lastStorageError}). You can keep rating, but entries will be lost when you close this page. Turn off private browsing, or copy a backup from the Saved tab before leaving.`;
+}
+
+async function save(){
+  const name=$("name").value.trim();
+  if(!name){ $("status").textContent="Add the vermouth's name before saving."; $("name").focus(); return; }
+  const existing = ratings.find(r=>r.id===editingId);
+  const entry={
+    id: editingId || Date.now().toString(36),
+    name, style:$("style").value, served:$("served").value, date:$("date").value,
+    scores:{...state.scores}, factorNotes:{...state.notes}, faults:[...state.faults],
+    notes:$("notes").value.trim(), flavours: existing? (existing.flavours||[]) : []
+  };
+  entry.total = computeTotal(entry.scores, entry.faults);
+  const i = ratings.findIndex(r=>r.id===entry.id);
+  if(i>=0) ratings[i]=entry; else ratings.push(entry);
+  const ok = await persist();
+  $("status").textContent = ok
+    ? `${i>=0?"Updated":"Saved"} ${name} at ${entry.total} points.`
+    : `Rated ${name} at ${entry.total} points for this session only.`;
+  resetForm(); renderList();
+  openWheel(entry.id);
+}
+
+async function remove(id){
+  const r = ratings.find(x=>x.id===id);
+  if(!r || !confirm(`Delete your rating for ${r.name}?`)) return;
+  ratings = ratings.filter(x=>x.id!==id);
+  await persist();
+  renderList();
+}
+
+function renderList(){
+  const sort=$("sort").value;
+  const list=ratings.slice().sort((a,b)=> sort==="score"? b.total-a.total : sort==="date"? (b.date||"").localeCompare(a.date||"") : a.name.localeCompare(b.name));
+  $("count").textContent = ratings.length ? `${ratings.length} rated` : "";
+  if(!list.length){ $("list").innerHTML=`<div class="empty">No ratings yet. Score your first vermouth on the Rate tab.</div>`; return; }
+  $("list").innerHTML = list.map(r=>{
+    const [m,c]=medalFor(r.total);
+    const fl = r.flavours||[];
+    const rows = FACTORS.map(f=>`<tr><td>${f.name}${r.factorNotes&&r.factorNotes[f.id]?`<span class="c">${esc(r.factorNotes[f.id])}</span>`:""}</td><td class="n">${r.scores[f.id]||0} / ${f.max}</td></tr>`).join("");
+    const faults = (r.faults||[]).length ? `<tr><td>Faults<span class="c">${esc(r.faults.join(", "))}</span></td><td class="n">−${r.faults.length*FAULT_PTS}</td></tr>` : "";
+    const wheel = fl.length ? `${wheelSVG(new Set(fl),{readonly:true, center:String(r.total), centerSub:m})}<div class="tags">${tagsHTML(fl)}</div>` : `<p class="hint" style="margin-top:12px">No flavours tagged yet.</p>`;
+    return `<div class="entry">
+      <button aria-expanded="false" data-toggle="${r.id}">
+        <span class="escore">${r.total}</span>
+        <span class="einfo"><span class="ename">${esc(r.name)}</span>
+          <span class="emeta">${esc(r.style)}, ${esc(r.served.toLowerCase())}${r.date?`, ${esc(r.date)}`:""} <span class="medal ${c}">${m}</span></span></span>
+      </button>
+      <div class="edetail" id="d-${r.id}" hidden>
+        ${wheel}
+        <table>${rows}${faults}</table>
+        ${r.notes?`<p style="margin:12px 0 0">${esc(r.notes)}</p>`:""}
+        <div class="actions">
+          <button class="btn ghost" data-wheel="${r.id}">${fl.length?"Edit flavours":"Tag flavours"}</button>
+          <button class="btn ghost" data-edit="${r.id}">Edit scores</button>
+          <button class="btn danger" data-del="${r.id}">Delete</button>
+        </div>
+      </div></div>`;
+  }).join("");
+  $("list").querySelectorAll("[data-toggle]").forEach(b=>b.addEventListener("click",()=>{
+    const d=$("d-"+b.dataset.toggle); d.hidden=!d.hidden; b.setAttribute("aria-expanded", !d.hidden);
+  }));
+  $("list").querySelectorAll("[data-wheel]").forEach(b=>b.addEventListener("click",()=>openWheel(b.dataset.wheel)));
+  $("list").querySelectorAll("[data-edit]").forEach(b=>b.addEventListener("click",()=>loadIntoForm(ratings.find(r=>r.id===b.dataset.edit))));
+  $("list").querySelectorAll("[data-del]").forEach(b=>b.addEventListener("click",()=>remove(b.dataset.del)));
+}
+
+function showTab(t){
+  document.querySelectorAll("[data-tab]").forEach(b=>b.setAttribute("aria-selected", b.dataset.tab===t));
+  ["rate","saved","scale"].forEach(x=>$("tab-"+x).hidden = x!==t);
+}
+document.querySelectorAll("[data-tab]").forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.tab)));
+$("save").addEventListener("click", save);
+$("clear").addEventListener("click", ()=>{resetForm(); $("status").textContent="";});
+$("sort").addEventListener("change", renderList);
+
+$("copyBackup").addEventListener("click", async ()=>{
+  const text = JSON.stringify({app:"vermouth-ratings", v:1, ratings});
+  try{ await navigator.clipboard.writeText(text); $("backupStatus").textContent=`Copied ${ratings.length} rating${ratings.length===1?"":"s"}. Paste it somewhere safe.`; }
+  catch(e){ $("showRestore").click(); $("restoreText").value=text; $("restoreText").select(); $("backupStatus").textContent="Your phone blocked copying. The backup is selected in the box: tap and hold to copy it."; }
+});
+$("showRestore").addEventListener("click", ()=>{ $("restoreBox").hidden=!$("restoreBox").hidden; });
+$("doRestore").addEventListener("click", ()=>{
+  let data;
+  try{ data = JSON.parse($("restoreText").value.trim()); }catch(e){ $("backupStatus").textContent="That text isn't a backup from this app. Paste the whole backup and try again."; return; }
+  const incoming = Array.isArray(data) ? data : data.ratings;
+  if(!Array.isArray(incoming)){ $("backupStatus").textContent="That text isn't a backup from this app. Paste the whole backup and try again."; return; }
+  const byId = new Map(ratings.map(r=>[r.id,r]));
+  let added=0; incoming.forEach(r=>{ if(r && r.id && r.name){ if(!byId.has(r.id)) added++; byId.set(r.id,r); } });
+  ratings=[...byId.values()]; persist(); renderList();
+  $("restoreText").value=""; $("restoreBox").hidden=true;
+  $("backupStatus").textContent=`Restored. ${added} new rating${added===1?"":"s"} added, ${ratings.length} in total.`;
+});
+
+buildForm(); resetForm(); loadRatings();
+</script>
+</body>
+</html>
